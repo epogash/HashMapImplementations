@@ -1,5 +1,5 @@
 # HashMap Implementations 
-Various HashMap implementations were created according to the assignment's specifications:
+Various HashMap implementations were created according to the assignment's specifications below. I received a 100% on this project.
 
 "
 ======================================================================
