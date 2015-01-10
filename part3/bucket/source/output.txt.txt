@@ -1,0 +1,497 @@
+/////////Testing Insert Method-ints/////////
+//Inserting first element//
+Probe attempts: 1
+- - - - (854) 
+//Inserting at same hash location//
+Probe attempts: 2
+- - - - (854,954) 
+//Inserting same key overwrites the key//
+Probe attempts: 2
+- - - - (854,954) 
+//Inserting at different locations//
+Probe attempts: 1
+- - (852) - (854,954) 
+Probe attempts: 1
+- - (852) (853) (854,954) 
+Probe attempts: 1
+(850) - (852) (853) (854,954) 
+Probe attempts: 1
+(850) (851) (852) (853) (854,954) 
+/////////Testing Remove Method-ints/////////
+//Removing from empty map//
+Probe attempts: 0
+- - - - - 
+//Inserting then removing an element//
+(850) - - - - 
+Probe attempts: 1
+Value: 5
+- - - - - 
+//Removing an element that doesn't exist//
+Probe attempts: -1
+(850) - - - - 
+Probe attempts: -2
+Value: 0
+(850,860) - - - - 
+//Removing an element when there is more than one in the list//
+Probe attempts: 2
+(850) - - - - 
+Value: 7
+/////////Testing Search Method-ints/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+- - - - - 
+//Insert then search for the key//
+(850) - - - - 
+Probe attempts: 1
+Value: 5
+Value: 0
+//Insert then search for the key- more than 1 element//
+(850,870) - - - - 
+Probe attempts: 2
+Value: 7
+//Search for key that doesn't exist//
+Probe attempts: -3
+(850,870) - - - - 
+Value: 0
+/////////Testing Clear Method-ints/////////
+//Clear empty map//
+- - - - - 
+//Clear list with an element//
+(850) - - - - 
+- - - - - 
+//Clear list with more than 1 element//
+(850,860) - (862) - - 
+- - - - - 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-ints/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+(860) - - - - 
+Is empty?: 0
+(860) - - (863) - 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+(860) - - - - 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+(860) - - - - 
+Is empty?: 0
+//Test if empty when last element is removed//
+(860) - - (833,863) - 
+(860) - - (833) - 
+(860) - - - - 
+- - - - - 
+Is empty?: 1
+/////////Testing capacity Method-ints/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-ints/////////
+//Test if size() is correct with insertions and removals//
+- - - - - 
+Size: 0
+- - - (833) - 
+Size: 1
+- - (862) (833) - 
+Size: 2
+- - (862) (833) (864) 
+Size: 3
+- - (862) (833) (864,874) 
+Size: 4
+- - - (833) (864,874) 
+Size: 3
+- - - (833) (864,874) 
+Size: 3
+- - - - (864,874) 
+Size: 2
+- - - - (874) 
+Size: 1
+- - - - - 
+Size: 0
+/////////Testing load Method-ints/////////
+//Test if load() is correct with insertions and removals//
+- - - - - 
+Load: 0
+- - - (833) - 
+Load: 0.2
+- - (862) (833) - 
+Load: 0.4
+- - (862) (833) (864) 
+Load: 0.6
+- - (862) (833) (864,874) 
+Load: 0.8
+- - - (833) (864,874) 
+Load: 0.6
+- - - (833) (864,874) 
+Load: 0.6
+- - - - (864,874) 
+Load: 0.4
+- - - - (874) 
+Load: 0.2
+- - - - - 
+Load: 0
+/////////Testing cluster_distribution Method-ints/////////
+//Test if cluster_distribution throws exception on empty map//
+//Exception thrown//
+//Test if clusters show correctly with many elements//
+- (851) (852) (853,863) (854,874,884) 
+1, 2
+2, 1
+3, 1
+/////////Testing remove_random Method-ints/////////
+//Throws exception when removing from empty list//
+- - - - - 
+occupied size: 0
+Exception caught
+//Test if remove_random works with many values//
+(850,820) (851,821) (852,842) (863,853) (854,844) 
+occupied size: 10
+854
+(850,820) (851,821) (852,842) (863,853) (844) 
+/////////Testing Insert Method-doubles/////////
+//Inserting first element//
+Probe attempts: 1
+- - - - (854.5) 
+//Inserting at same hash location//
+Probe attempts: 2
+- - - - (854.5,954.5) 
+//Inserting same key overwrites the key//
+Probe attempts: 2
+- - - - (854.5,954.5) 
+//Inserting at different locations//
+Probe attempts: 1
+- - (852.5) - (854.5,954.5) 
+Probe attempts: 1
+- - (852.5) (853.5) (854.5,954.5) 
+Probe attempts: 1
+(850.5) - (852.5) (853.5) (854.5,954.5) 
+Probe attempts: 1
+(850.5) (851.5) (852.5) (853.5) (854.5,954.5) 
+/////////Testing Remove Method-doubles/////////
+//Removing from empty map//
+Probe attempts: 0
+- - - - - 
+//Inserting then removing an element//
+(850) - - - - 
+Probe attempts: -1
+Value: 0
+(850) - - - - 
+//Removing an element that doesn't exist//
+Probe attempts: -2
+(850,850.5) - - - - 
+Probe attempts: -3
+Value: 0
+(850,850.5,860.5) - - - - 
+//Removing an element when there is more than one in the list//
+Probe attempts: 3
+(850,850.5) - - - - 
+Value: 7
+/////////Testing Search Method-doubles/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+- - - - - 
+//Insert then search for the key//
+(850.5) - - - - 
+Probe attempts: 1
+Value: 5
+Value: 0
+//Insert then search for the key- more than 1 element//
+(850.5,870.5) - - - - 
+Probe attempts: 2
+Value: 7
+//Search for key that doesn't exist//
+Probe attempts: -3
+(850.5,870.5) - - - - 
+Value: 0
+/////////Testing Clear Method-double/////////
+//Clear empty map//
+- - - - - 
+//Clear list with an element//
+(850.5) - - - - 
+- - - - - 
+//Clear list with more than 1 element//
+(850.5,860.5) - (862.5) - - 
+- - - - - 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-double/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+(860.5) - - - - 
+Is empty?: 0
+(860.5) - - (863.5) - 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+(860.5) - - - - 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+(860.5) - - - - 
+Is empty?: 0
+//Test if empty when last element is removed//
+(860.5) - - (833.5,863.5) - 
+(860.5) - - (833.5) - 
+(860.5) - - - - 
+- - - - - 
+Is empty?: 1
+/////////Testing capacity Method-double/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-double/////////
+//Test if size() is correct with insertions and removals//
+- - - - - 
+Size: 0
+- - - (833.5) - 
+Size: 1
+- - (862.5) (833.5) - 
+Size: 2
+- - (862.5) (833.5) (864.5) 
+Size: 3
+- - (862.5) (833.5) (864.5,874.5) 
+Size: 4
+- - - (833.5) (864.5,874.5) 
+Size: 3
+- - - (833.5) (864.5,874.5) 
+Size: 3
+- - - - (864.5,874.5) 
+Size: 2
+- - - - (874.5) 
+Size: 1
+- - - - - 
+Size: 0
+/////////Testing load Method-double/////////
+//Test if load() is correct with insertions and removals//
+- - - - - 
+Load: 0
+- - - (833.5) - 
+Load: 0.2
+- - (862.5) (833.5) - 
+Load: 0.4
+- - (862.5) (833.5) (864.5) 
+Load: 0.6
+- - (862.5) (833.5) (864.5,874.5) 
+Load: 0.8
+- - - (833.5) (864.5,874.5) 
+Load: 0.6
+- - - (833.5) (864.5,874.5) 
+Load: 0.6
+- - - - (864.5,874.5) 
+Load: 0.4
+- - - - (874.5) 
+Load: 0.2
+- - - - - 
+Load: 0
+/////////Testing cluster_distribution Method-double/////////
+//Test if cluster_distribution throws exception on empty map//
+//Exception thrown//
+//Test if clusters show correctly with many elements//
+- (851) (852) (853,863) (854,874,884) 
+1, 2
+2, 1
+3, 1
+/////////Testing remove_random Method-double/////////
+//Throws exception when removing from empty list//
+- - - - - 
+occupied size: 0
+Exception caught
+//Test if remove_random works with many values//
+(850,820) (851,821) (852,842) (863,853) (854,844) 
+occupied size: 10
+854
+(850,820) (851,821) (852,842) (863,853) (844) 
+/////////Testing Insert Method-cstring/////////
+//Inserting first element//
+Probe attempts: 1
+(A) - - - - 
+//Inserting at same hash location//
+Probe attempts: 1
+(A) (B) - - - 
+//Inserting same key overwrites the key//
+Probe attempts: 1
+(A) (B) - - - 
+//Inserting at different locations//
+Probe attempts: 1
+(A) (B) (C) - - 
+Probe attempts: 1
+(A) (B) (C) (D) - 
+Probe attempts: 1
+(A) (B) (C) (D) (E) 
+Probe attempts: 2
+(A,F) (B) (C) (D) (E) 
+/////////Testing Remove Method-cstring/////////
+//Removing from empty map//
+Probe attempts: 0
+- - - - - 
+//Inserting then removing an element//
+(A) - - - - 
+Probe attempts: 1
+Value: insert
+- - - - - 
+//Removing an element that doesn't exist//
+Probe attempts: 0
+(A) - - - - 
+Probe attempts: 0
+Value: 
+(A) - (C) - - 
+//Removing an element when there is more than one in the list//
+Probe attempts: 1
+(A) - - - - 
+Value: insert
+/////////Testing Search Method-cstring/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+- - - - - 
+//Insert then search for the key//
+- (B) - - - 
+Probe attempts: 1
+Value: insert
+Value: 
+//Insert then search for the key- more than 1 element//
+- (B) (C) - - 
+Probe attempts: 1
+Value: insert
+//Search for key that doesn't exist//
+Probe attempts: 0
+- (B) (C) - - 
+Value: 
+/////////Testing Clear Method-cstring/////////
+//Clear empty map//
+- - - - - 
+//Clear list with an element//
+(A) - - - - 
+- - - - - 
+//Clear list with more than 1 element//
+(A) (B) (C) - - 
+- - - - - 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-cstring/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+(A) - - - - 
+Is empty?: 0
+(A) (B) - - - 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+(A) - - - - 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+(A) - - - - 
+Is empty?: 0
+//Test if empty when last element is removed//
+(A) (B) (C) - - 
+(A) - (C) - - 
+(A) - - - - 
+- - - - - 
+Is empty?: 1
+/////////Testing capacity Method-cstring/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-cstring/////////
+//Test if size() is correct with insertions and removals//
+- - - - - 
+Size: 0
+(A) - - - - 
+Size: 1
+(A) (B) - - - 
+Size: 2
+(A) (B) (C) - - 
+Size: 3
+(A) (B) (C) (D) - 
+Size: 4
+(A) - (C) (D) - 
+Size: 3
+(A) - (C) (D) - 
+Size: 3
+- - (C) (D) - 
+Size: 2
+- - - (D) - 
+Size: 1
+- - - - - 
+Size: 0
+/////////Testing load Method-cstring/////////
+//Test if load() is correct with insertions and removals//
+- - - - - 
+Load: 0
+(A) - - - - 
+Load: 0.2
+(A) (B) - - - 
+Load: 0.4
+(A) (B) (C) - - 
+Load: 0.6
+(A) (B) (C) (D) - 
+Load: 0.8
+(A) - (C) (D) - 
+Load: 0.6
+(A) - (C) (D) - 
+Load: 0.6
+- - (C) (D) - 
+Load: 0.4
+- - - (D) - 
+Load: 0.2
+- - - - - 
+Load: 0
+/////////Testing cluster_distribution Method-cstring/////////
+//Test if cluster_distribution throws exception on empty map//
+//Exception thrown//
+//Test if clusters show correctly with many elements//
+(A,F) (B,G) (C) (D) (E) 
+1, 3
+2, 2
+/////////Testing remove_random Method-cstring/////////
+//Throws exception when removing from empty list//
+- - - - - 
+occupied size: 0
+Exception caught
+//Test if remove_random works with many values//
+(A,F) (B,G) (C) (D) (E) 
+occupied size: 7
+E
+(A,F) (B,G) (C) (D) - 
+/////////Testing Insert Method-stdstring/////////
+//Inserting first element//
+Probe attempts: 1
+- - (A) - - 
+//Inserting at same hash location//
+Probe attempts: 1
+- - (A) - (B) 
+//Inserting same key overwrites the key//
+Probe attempts: 1
+- - (A) - (B) 
+//Inserting at different locations//
+Probe attempts: 1
+(C) - (A) - (B) 
+Probe attempts: 2
+(C,D) - (A) - (B) 
+Probe attempts: 1
+(C,D) (E) (A) - (B) 
+Probe attempts: 1
+(C,D) (E) (A) (F) (B) 
+/////////Testing Remove Method-stdstring/////////
+//Removing from empty map//
+Probe attempts: 0
+- - - - - 
+//Inserting then removing an element//
+- - (A) - - 
+Probe attempts: 1
+Value: insert
+- - - - - 
+//Removing an element that doesn't exist//
+Probe attempts: 0
+- - (A) - - 
+Probe attempts: -1
+Value: 

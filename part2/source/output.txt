@@ -1,0 +1,137 @@
+/////////Testing Insert Method-ints/////////
+//Inserting first element//
+Insertion Worked: 1
+- - - - (854) 
+//Inserting at same hash location//
+Insertion Worked: 1
+- - - - (854,954) 
+//Inserting same key overwrites the key//
+Insertion Worked: 1
+- - - - (854,954) 
+//Inserting at different locations//
+Insertion Worked: 1
+- - (852) - (854,954) 
+Insertion Worked: 1
+- - (852) (853) (854,954) 
+Insertion Worked: 1
+(850) - (852) (853) (854,954) 
+Insertion Worked: 1
+(850) (851) (852) (853) (854,954) 
+/////////Testing Remove Method-ints/////////
+//Removing from empty map//
+Probe attempts: 0
+- - - - - 
+//Inserting then removing an element//
+(850) - - - - 
+Remove Worked: 1
+Value: 5
+- - - - - 
+//Removing an element that doesn't exist//
+Remove Worked: 0
+(850) - - - - 
+Remove Worked: 0
+Value: 0
+(850,860) - - - - 
+//Removing an element when there is more than one in the list//
+Remove Worked: 1
+(850) - - - - 
+Value: 7
+/////////Testing Search Method-ints/////////
+//Search for key that doesn't exist-empty map//
+Key Found: 0
+- - - - - 
+//Insert then search for the key//
+(850) - - - - 
+Key Found: 1
+Value: 5
+Value: 0
+//Insert then search for the key- more than 1 element//
+(850,870) - - - - 
+Key Found: 1
+Value: 7
+//Search for key that doesn't exist//
+Key Found: 0
+(850,870) - - - - 
+Value: 0
+/////////Testing Clear Method-ints/////////
+//Clear empty map//
+- - - - - 
+//Clear list with an element//
+(850) - - - - 
+- - - - - 
+//Clear list with more than 1 element//
+(850,860) - (862) - - 
+- - - - - 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-ints/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+(860) - - - - 
+Is empty?: 0
+(860) - - (863) - 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+(860) - - - - 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+(860) - - - - 
+Is empty?: 0
+//Test if empty when last element is removed//
+(860) - - (833,863) - 
+(860) - - (833) - 
+(860) - - - - 
+- - - - - 
+Is empty?: 1
+/////////Testing capacity Method-ints/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-ints/////////
+//Test if size() is correct with insertions and removals//
+- - - - - 
+Size: 0
+- - - (833) - 
+Size: 1
+- - (862) (833) - 
+Size: 2
+- - (862) (833) (864) 
+Size: 3
+- - (862) (833) (864,874) 
+Size: 4
+- - - (833) (864,874) 
+Size: 3
+- - - (833) (864,874) 
+Size: 3
+- - - - (864,874) 
+Size: 2
+- - - - (874) 
+Size: 1
+- - - - - 
+Size: 0
+/////////Testing load Method-ints/////////
+//Test if load() is correct with insertions and removals//
+- - - - - 
+Load: 0
+- - - (833) - 
+Load: 0.2
+- - (862) (833) - 
+Load: 0.4
+- - (862) (833) (864) 
+Load: 0.6
+- - (862) (833) (864,874) 
+Load: 0.8
+- - - (833) (864,874) 
+Load: 0.6
+- - - (833) (864,874) 
+Load: 0.6
+- - - - (864,874) 
+Load: 0.4
+- - - - (874) 
+Load: 0.2
+- - - - - 
+Load: 0

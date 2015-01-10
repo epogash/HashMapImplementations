@@ -1,0 +1,598 @@
+/////////Testing Insert Method-ints/////////
+//Inserting first element//
+Probe attempts: 1
+TREE HEIGHT: 1
+854 
+//Inserting another key//
+Probe attempts: 2
+TREE HEIGHT: 2
+854 - 954 
+//Inserting same key overwrites the key//
+Probe attempts: 2
+TREE HEIGHT: 2
+854 - 954 
+//Inserting at different locations//
+Probe attempts: 3
+TREE HEIGHT: 3
+852 - 854 - - - 954 
+Probe attempts: 3
+TREE HEIGHT: 3
+852 - 854 - - 853 954 
+Probe attempts: 2
+TREE HEIGHT: 3
+852 850 854 - - 853 954 
+Probe attempts: 0
+TREE HEIGHT: 3
+852 850 854 - - 853 954 
+/////////Testing Remove Method-ints/////////
+//Removing from empty map//
+Probe attempts: 0
+//Inserting then removing an element//
+TREE HEIGHT: 1
+850 
+Probe attempts: 1
+Value: 5
+//Removing an element that doesn't exist//
+Probe attempts: -1
+TREE HEIGHT: 1
+850 
+Probe attempts: -1
+Value: 0
+TREE HEIGHT: 2
+860 850 - 
+//Removing an element when there is more than one in the list//
+Probe attempts: 0
+TREE HEIGHT: 1
+850 
+Value: 7
+/////////Testing Search Method-ints/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+//Insert then search for the key//
+TREE HEIGHT: 1
+850 
+Probe attempts: 1
+Value: 5
+Value: 0
+//Insert then search for the key- more than 1 element//
+TREE HEIGHT: 2
+870 850 - 
+Probe attempts: 1
+Value: 7
+//Search for key that doesn't exist//
+Probe attempts: -1
+TREE HEIGHT: 2
+870 850 - 
+Value: 0
+/////////Testing Clear Method-ints/////////
+//Clear empty map//
+//Clear list with more than 1 element//
+TREE HEIGHT: 2
+860 850 862 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-ints/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+TREE HEIGHT: 1
+860 
+Is empty?: 0
+TREE HEIGHT: 2
+860 - 863 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+TREE HEIGHT: 1
+860 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+TREE HEIGHT: 1
+860 
+Is empty?: 0
+//Test if empty when last element is removed//
+TREE HEIGHT: 2
+860 833 863 
+TREE HEIGHT: 2
+860 833 - 
+TREE HEIGHT: 1
+860 
+Is empty?: 1
+/////////Testing capacity Method-ints/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-ints/////////
+//Test if size() is correct with insertions and removals//
+Size: 0
+TREE HEIGHT: 1
+833 
+Size: 1
+TREE HEIGHT: 2
+833 - 862 
+Size: 2
+TREE HEIGHT: 3
+833 - 862 - - - 864 
+Size: 3
+TREE HEIGHT: 4
+874 833 - - 862 - - - - - 864 - - - - 
+Size: 4
+TREE HEIGHT: 3
+874 833 - - 864 - - 
+Size: 3
+TREE HEIGHT: 3
+874 833 - - 864 - - 
+Size: 3
+TREE HEIGHT: 2
+874 864 - 
+Size: 2
+TREE HEIGHT: 1
+874 
+Size: 1
+Size: 0
+/////////Testing load Method-ints/////////
+//Test if load() is correct with insertions and removals//
+Load: 0
+TREE HEIGHT: 1
+833 
+Load: 0.2
+TREE HEIGHT: 2
+833 - 862 
+Load: 0.4
+TREE HEIGHT: 3
+864 833 - - 862 - - 
+Load: 0.6
+TREE HEIGHT: 4
+874 864 - 833 - - - - 862 - - - - - - 
+Load: 0.8
+TREE HEIGHT: 3
+874 864 - 833 - - - 
+Load: 0.6
+TREE HEIGHT: 3
+874 864 - 833 - - - 
+Load: 0.6
+TREE HEIGHT: 2
+874 864 - 
+Load: 0.4
+TREE HEIGHT: 1
+874 
+Load: 0.2
+Load: 0
+/////////Testing remove_random Method-ints/////////
+//Throws exception when removing from empty list//
+Exception caught
+//Test if remove_random works with many values//
+TREE HEIGHT: 3
+851 842 853 - - 852 863 
+842
+TREE HEIGHT: 3
+851 - 853 - - 852 863 
+/////////Testing Insert Method-doubles/////////
+//Inserting first element//
+Probe attempts: 1
+TREE HEIGHT: 1
+854.5 
+//Inserting at same hash location//
+Probe attempts: 2
+TREE HEIGHT: 2
+854.5 - 954.5 
+//Inserting same key overwrites the key//
+Probe attempts: 3
+TREE HEIGHT: 2
+954.5 854.5 - 
+//Inserting at different locations//
+Probe attempts: 5
+TREE HEIGHT: 3
+852.5 - 954.5 - - 854.5 - 
+Probe attempts: 5
+TREE HEIGHT: 3
+853.5 852.5 954.5 - - 854.5 - 
+Probe attempts: 0
+TREE HEIGHT: 3
+853.5 852.5 954.5 - - 854.5 - 
+Probe attempts: 0
+TREE HEIGHT: 3
+853.5 852.5 954.5 - - 854.5 - 
+/////////Testing Remove Method-doubles/////////
+//Removing from empty map//
+Probe attempts: 0
+//Inserting then removing an element//
+TREE HEIGHT: 1
+850 
+Probe attempts: -1
+Value: 0
+TREE HEIGHT: 1
+850 
+//Removing an element that doesn't exist//
+Probe attempts: -2
+TREE HEIGHT: 2
+850 - 850.5 
+Probe attempts: -1
+Value: 0
+TREE HEIGHT: 3
+860.5 850 - - 850.5 - - 
+//Removing an element when there is more than one in the list//
+Probe attempts: 0
+TREE HEIGHT: 2
+850 - 850.5 
+Value: 7
+/////////Testing Search Method-doubles/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+//Insert then search for the key//
+TREE HEIGHT: 1
+850.5 
+Probe attempts: 1
+Value: 5
+Value: 0
+//Insert then search for the key- more than 1 element//
+TREE HEIGHT: 2
+870.5 850.5 - 
+Probe attempts: 1
+Value: 7
+//Search for key that doesn't exist//
+Probe attempts: -1
+TREE HEIGHT: 2
+870.5 850.5 - 
+Value: 0
+/////////Testing Clear Method-double/////////
+//Clear empty map//
+//Clear list with an element//
+TREE HEIGHT: 1
+850.5 
+//Clear list with more than 1 element//
+TREE HEIGHT: 2
+860.5 850.5 862.5 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-double/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+TREE HEIGHT: 1
+860.5 
+Is empty?: 0
+TREE HEIGHT: 2
+863.5 860.5 - 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+TREE HEIGHT: 1
+860.5 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+TREE HEIGHT: 1
+860.5 
+Is empty?: 0
+//Test if empty when last element is removed//
+TREE HEIGHT: 3
+833.5 - 860.5 - - - 863.5 
+TREE HEIGHT: 2
+833.5 - 860.5 
+TREE HEIGHT: 1
+860.5 
+Is empty?: 1
+/////////Testing capacity Method-double/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-double/////////
+//Test if size() is correct with insertions and removals//
+Size: 0
+TREE HEIGHT: 1
+833.5 
+Size: 1
+TREE HEIGHT: 2
+862.5 833.5 - 
+Size: 2
+TREE HEIGHT: 3
+864.5 862.5 - 833.5 - - - 
+Size: 3
+TREE HEIGHT: 3
+864.5 862.5 874.5 833.5 - - - 
+Size: 4
+TREE HEIGHT: 2
+864.5 833.5 874.5 
+Size: 3
+TREE HEIGHT: 2
+864.5 833.5 874.5 
+Size: 3
+TREE HEIGHT: 2
+864.5 - 874.5 
+Size: 2
+TREE HEIGHT: 1
+874.5 
+Size: 1
+Size: 0
+/////////Testing load Method-double/////////
+//Test if load() is correct with insertions and removals//
+Load: 0
+TREE HEIGHT: 1
+833.5 
+Load: 0.2
+TREE HEIGHT: 2
+833.5 - 862.5 
+Load: 0.4
+TREE HEIGHT: 3
+864.5 833.5 - - 862.5 - - 
+Load: 0.6
+TREE HEIGHT: 4
+874.5 864.5 - 833.5 - - - - 862.5 - - - - - - 
+Load: 0.8
+TREE HEIGHT: 3
+874.5 864.5 - 833.5 - - - 
+Load: 0.6
+TREE HEIGHT: 3
+874.5 864.5 - 833.5 - - - 
+Load: 0.6
+TREE HEIGHT: 2
+874.5 864.5 - 
+Load: 0.4
+TREE HEIGHT: 1
+874.5 
+Load: 0.2
+Load: 0
+/////////Testing cluster_distribution Method-double/////////
+//Test if cluster_distribution throws exception on empty map//
+//Test if clusters show correctly with many elements//
+TREE HEIGHT: 3
+863 854 884 853 - 874 - 
+TREE HEIGHT: 3
+863 854 884 853 - 874 - 
+LEVEL: 3
+NODE HEIGHT: 0
+TREE HEIGHT: 3
+863 854 884 853 - 874 - 
+LEVEL: 3
+NODE HEIGHT: 0
+0, 2
+/////////Testing remove_random Method-double/////////
+//Throws exception when removing from empty list//
+Exception caught
+//Test if remove_random works with many values//
+TREE HEIGHT: 4
+851 842 852 - - - 863 - - - - - - 853 - 
+842
+TREE HEIGHT: 4
+851 - 852 - - - 863 - - - - - - 853 - 
+/////////Testing Insert Method-cstring/////////
+//Inserting first element//
+Probe attempts: 1
+TREE HEIGHT: 1
+A 
+//Inserting at same hash location//
+Probe attempts: 2
+TREE HEIGHT: 2
+A - B 
+//Inserting same key overwrites the key//
+Probe attempts: 3
+TREE HEIGHT: 2
+B A - 
+//Inserting at different locations//
+Probe attempts: 2
+TREE HEIGHT: 2
+B A C 
+Probe attempts: 5
+TREE HEIGHT: 3
+D B - A C - - 
+Probe attempts: 0
+TREE HEIGHT: 3
+D B - A C - - 
+Probe attempts: 0
+TREE HEIGHT: 3
+D B - A C - - 
+/////////Testing Remove Method-cstring/////////
+//Removing from empty map//
+Probe attempts: 0
+//Inserting then removing an element//
+TREE HEIGHT: 1
+A 
+Probe attempts: 1
+Value: insert
+//Removing an element that doesn't exist//
+Probe attempts: -1
+TREE HEIGHT: 1
+A 
+Probe attempts: -1
+Value: 
+TREE HEIGHT: 2
+A - C 
+//Removing an element when there is more than one in the list//
+Probe attempts: -1
+TREE HEIGHT: 2
+A - C 
+Value: 
+/////////Testing Search Method-cstring/////////
+//Search for key that doesn't exist-empty map//
+Probe attempts: 0
+//Insert then search for the key//
+TREE HEIGHT: 1
+B 
+Probe attempts: 1
+Value: insert
+Value: 
+//Insert then search for the key- more than 1 element//
+TREE HEIGHT: 2
+C B - 
+Probe attempts: 1
+Value: insert
+//Search for key that doesn't exist//
+Probe attempts: -2
+TREE HEIGHT: 2
+C B - 
+Value: 
+/////////Testing Clear Method-cstring/////////
+//Clear empty map//
+//Clear list with an element//
+TREE HEIGHT: 1
+A 
+//Clear list with more than 1 element//
+TREE HEIGHT: 2
+B A C 
+//Test if it's empty//
+Is empty?: 1
+/////////Testing is_empty Method-cstring/////////
+//Test if empty on empty map//
+Is empty?: 1
+//Test if empty when an element is inserted//
+TREE HEIGHT: 1
+A 
+Is empty?: 0
+TREE HEIGHT: 2
+A - B 
+//Test if empty when another element is inserted//
+Is empty?: 0
+//Test if empty when an element is removed//
+TREE HEIGHT: 2
+A - B 
+Is empty?: 0
+//Test if empty when a nonexistent element is removed//
+TREE HEIGHT: 2
+A - B 
+Is empty?: 0
+//Test if empty when last element is removed//
+TREE HEIGHT: 3
+C A - - B - - 
+TREE HEIGHT: 3
+C A - - B - - 
+TREE HEIGHT: 2
+A - B 
+TREE HEIGHT: 1
+B 
+Is empty?: 0
+/////////Testing capacity Method-cstring/////////
+//Test if capacity changes with insertions and removals//
+Capacity: 5
+Capacity: 5
+Capacity: 5
+Capacity: 5
+/////////Testing size Method-cstring/////////
+//Test if size() is correct with insertions and removals//
+Size: 0
+TREE HEIGHT: 1
+A 
+Size: 1
+TREE HEIGHT: 2
+A - B 
+Size: 2
+TREE HEIGHT: 3
+C A - - B - - 
+Size: 3
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Size: 4
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Size: 4
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Size: 4
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Size: 4
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Size: 4
+TREE HEIGHT: 3
+C A - - B - - 
+Size: 3
+/////////Testing load Method-cstring/////////
+//Test if load() is correct with insertions and removals//
+Load: 0
+TREE HEIGHT: 1
+A 
+Load: 0.2
+TREE HEIGHT: 2
+A - B 
+Load: 0.4
+TREE HEIGHT: 3
+C A - - B - - 
+Load: 0.6
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Load: 0.8
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Load: 0.8
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Load: 0.8
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Load: 0.8
+TREE HEIGHT: 4
+D C - A - - - - B - - - - - - 
+Load: 0.8
+TREE HEIGHT: 3
+C A - - B - - 
+Load: 0.6
+/////////Testing cluster_distribution Method-cstring/////////
+//Test if cluster_distribution throws exception on empty map//
+//Test if clusters show correctly with many elements//
+TREE HEIGHT: 4
+E C - A D - - - B - - - - - - 
+TREE HEIGHT: 4
+E C - A D - - - B - - - - - - 
+TREE HEIGHT: 4
+LEVEL: 3
+NODE HEIGHT: 1
+TREE HEIGHT: 4
+E C - A D - - - B - - - - - - 
+TREE HEIGHT: 4
+LEVEL: 4
+NODE HEIGHT: 0
+0, 1
+1, 1
+/////////Testing remove_random Method-cstring/////////
+//Throws exception when removing from empty list//
+Exception caught
+//Test if remove_random works with many values//
+TREE HEIGHT: 4
+D A E - B - - - - - C - - - - 
+A
+TREE HEIGHT: 4
+D A E - B - - - - - C - - - - 
+/////////Testing Insert Method-stdstring/////////
+//Inserting first element//
+Probe attempts: 1
+TREE HEIGHT: 1
+A 
+//Inserting at same hash location//
+Probe attempts: 2
+TREE HEIGHT: 2
+A - B 
+//Inserting same key overwrites the key//
+Probe attempts: 3
+TREE HEIGHT: 2
+B A - 
+//Inserting at different locations//
+Probe attempts: 2
+TREE HEIGHT: 2
+B A C 
+Probe attempts: 5
+TREE HEIGHT: 3
+D B - A C - - 
+Probe attempts: 0
+TREE HEIGHT: 3
+D B - A C - - 
+Probe attempts: 0
+TREE HEIGHT: 3
+D B - A C - - 
+/////////Testing Remove Method-stdstring/////////
+//Removing from empty map//
+Probe attempts: 0
+//Inserting then removing an element//
+TREE HEIGHT: 1
+A 
+Probe attempts: 1
+Value: insert
+//Removing an element that doesn't exist//
+Probe attempts: -1
+TREE HEIGHT: 1
+A 
+Probe attempts: -2
+Value: 

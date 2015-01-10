@@ -1,0 +1,49 @@
+<MAP variety:  Hashmap with Open Addressing> written by <Pogash>, <Eric>
+COP 3530, 2014F <1085>
+======================================================================
+Part I: hashmaps with Open Addressing
+======================================================================
+My MAP implementation uses the data structure described in the part I
+instructions and conforms to the technique required for this map
+variety: <yes>
+
+My MAP implementation 100% correctly supports the following methods
+as described in part I:
+
+* insert: <yes>
+* remove: <yes>
+* search: <yes>
+* clear: <yes>
+* is_empty: <yes>
+* capacity: <yes>
+* size: <yes>
+* load: <yes>
+* print: <yes>
+
+======================================================================
+FOR ALL PARTS
+======================================================================
+
+My MAP implementation compiles correctly using g++ v4.8.2 on the
+OpenBSD VM: <yes>
+
+My TEST compiles correctly using g++ v4.8.2 on the OpenBSD VM: <yes>
+
+My TESTS run correctly on the OpenBSD VM: <yes>
+
+I affirm that all the responsess I have provided above are 100% true.
+Should it be determined that any are not 100% true, I agree to take a 0
+(zero) on the assignment: <yes>
+
+I affirm that I am the sole author of this <MAP variety: Hashmap with Open Addressing>
+and the associated tests.  
+<Pogash> <Eric>, <11/30/14> in COP3520 section <1085>
+
+----------------------------------------------------------------------
+<any comments you want the grader to read>
+----------------------------------------------------------------------
+
+How to compile and run my unit tests on the OpenBSD VM
+g++ -c -std=c++11 OAHashMapTests.cpp
+g++ -o OA OAHashMapTests.o
+./OA
